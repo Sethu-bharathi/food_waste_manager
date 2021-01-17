@@ -42,6 +42,19 @@ class _PollViewState extends State<Poll> {
   @override
  Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar( 
+      title:Row(
+        mainAxisAlignment:MainAxisAlignment.end,
+        children:[
+          GestureDetector(child: Icon(
+            Icons.logout,
+          ),
+          onTap: (){
+            FirebaseAuth.instance.signOut();
+          },)
+
+        ],
+      ),),
       body: Container(
         child: Column(
           children: <Widget>[
